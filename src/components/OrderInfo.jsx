@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
 import img1 from '../assets/images/amazon-pay-logo.svg';
 import img2 from '../assets/images/paypal-logo.svg';
-import { BsChevronDoubleRight, BsFillCaretUpFill, BsBox2Heart } from "react-icons/bs";
+import img30 from '../assets/images/61Z8rLU86QL-_AC_SR255-340__FMwebp_.jpg'
+import { BsChevronDoubleRight, BsFillCaretUpFill, BsBox2Heart, BsHeart, BsFillHeartFill } from "react-icons/bs";
 import { Disclosure } from '@headlessui/react'
+import Button from "./Button";
 
 function OrderInfo() {
     return (
@@ -31,13 +33,111 @@ function OrderInfo() {
                             </div>
                             <div className="relative border-1 border-gray-400 mt-8"><p className="absolute top-[-13px] left-[47%] bg-white px-5 ">OR</p></div>
 
+
                             <div className="mt-5">
-                            <h1 className="font-semibold text-2xl mb-5">1. Shipping Address</h1>
-                                <div className="border-1 border-gray-400">
+                                <h1 className="font-semibold text-2xl mb-5">1. Shipping Address</h1>
+                                <div className="border-1 border-gray-200 py-5 px-3">
+                                    <div className=" w-full border-b-1">
+                                        <h3 className="text-lg font-semibold mb-1 ">Add a new shipping Address</h3>
+                                    </div>
+                                    <div className="mt-2 ml-1">
+                                        <label className="w-full">Country <span className="text-red-700">*</span></label>
+                                        <select className="w-full block my-2 rounded-md py-2 pl-3 border-2 border-gray-300 outline-none">
+                                            <option value="united states">United States</option>
+                                            <option value="nigeria">Nigeria</option>
+                                            <option value="puerto rico">Puerto Rico</option>
+                                            <option value="Palau">Palau</option>
+                                        </select>
+                                    </div>
+                                    <div className="mt-2 ml-1">
+                                        <label >Full Name <span className="text-red-700">*</span></label>
+                                        <input type="text" placeholder="First and last name" className="w-full block my-2 rounded-md py-2 pl-3 border-2 border-gray-300 outline-none" />
+                                    </div>
+                                    <div className="mt-2 ml-1">
+                                        <label >Address Line 1 <span className="text-red-700">*</span></label>
+                                        <input type="text" placeholder="Street address, company name, c/o" className="w-full block my-2 rounded-md py-2 pl-3 border-2 border-gray-300 outline-none" />
+                                    </div>
+                                    <div className="mt-2 ml-1">
+                                        <label >Address Line 2</label>
+                                        <input type="text" placeholder="Apartment, suite, unit, building, floor, etc." className="w-full block my-2 rounded-md py-2 pl-3 border-2 border-gray-300 outline-none" />
+                                    </div>
+                                    <div className="flex gap-3 mt-2 ml-1">
+                                        <div>
+                                            <label >City <span className="text-red-700">*</span></label>
+                                            <input type="text" placeholder="eg. Abuja" className="block my-2 rounded-md w-44 py-2 pl-3 border-2 border-gray-300" />
+                                        </div>
+                                        <div>
+                                            <label >State <span className="text-red-700">*</span></label>
+                                            <input type="text" placeholder="eg. FCT" className="block my-2 rounded-md w-44 py-2 pl-3 border-2 border-gray-300" />
+                                        </div>
+                                        <div>
+                                            <label >Zip <span className="text-red-700">*</span></label>
+                                            <input type="text" placeholder="eg. 900801" className="block my-2 rounded-md w-44 py-2 pl-3 border-2 border-gray-300" />
+                                        </div>
+                                    </div>
+                                    <div className="mt-2 ml-1">
+                                        <label >Phone Number <span className="text-red-700">*</span></label>
+                                        <input type="number" placeholder="Including area code" className="block my-2 rounded-md w-44 py-2 pl-3 border-2 border-gray-300" />
+                                    </div>
+                                    <div className="flex gap-2 mt-3 ml-1">
+                                        <input type="checkbox" className="w-5" />
+                                        <p>Use address for billing</p>
+                                    </div>
+                                    <button className="uppercase text-white bg-blue-custom font-bold text-sm px-6 py-3 rounded-md mt-4 ">ship to this address</button>
+                                </div>
+                            </div>
+                            <div className="mt-5">
+                                <h1 className="font-semibold text-2xl mb-5">2. Payment Method</h1>
+                                <div className="border-1 border-gray-200 py-5 px-3">
+                                    <small>Please add or select a shipping address to proceed</small>
+                                </div>
+                            </div>
+                            <div className="mt-5">
+                                <h1 className="font-semibold text-2xl mb-5">3. Item Review and Shipping</h1>
+                                <div className="border-1 py-5 px-2 flex justify-between ">
+                                    <div className="text-center ">
+                                        <div className="group relative  mx-6">
+                                            <span className="bg-white absolute right-0 top-0 px-2 py-0.5 rounded-bl-lg flex gap-2 group"><BsHeart className="text-sm text-black my-auto group-hover:animate-bounce" /></span>
+                                            <img src={img30} alt="cart item" className="w-20 my-auto mx-auto" />
+                                        </div>
+                                        <select name="quantity" className="p-2 px-8 border-1 border-gray-300 tracking-tighter outline-2 focus:outline-dashed rounded-md outline-offset-1 focus:outline-sky-600">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                    <div className="pr-8">
+                                        <p className="text-blue-custom">Carhartt</p>
+                                        <p className="capitalize text-sm font-semibold mb-2 ">Flame-resistant (FR) Force Cotton long sleeve t-shirt</p>
+                                        <p > Color: <span>Dark Navy</span></p>
+                                        <p >Size: <span>XL (Reg)</span></p>
+                                        <p className="text-green-900 font-bold mb-2 text-sm mt-4">$74.99</p>
+                                        <div className="font-bold text-blue-custom pt-2 flex gap-2">
+                                            <button className="flex px-2 border-2 border-sky-900 rounded-md hover:bg-sky-900 hover:text-white group">Move to <BsFillHeartFill className="my-auto ml-1 text-sm text-gray-300 group-hover:text-red-500"/></button>
+                                            <button className="px-2 border-2 border-sky-900 rounded-md hover:bg-sky-900 hover:text-white">Remove</button>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-center w-80">
+                                        <div className="border-1 border-gray-300 p-4">
+                                            <p className="text-sm text-gray-700">Please add or select a shipping address to view delivery options.</p>
+                                        </div>
+                                    </div>
                                     
+                                </div>
+
+                                <div className="">
+
+                                <h1 className="font-semibold text-xl mb-5 mt-3">Order total: $74.99</h1>
+
+                                    <small>By placing your order, you agree to zappos.com’s <a href="#">privacy notice</a> and <a href="#">conditions of use</a>. *<a href="#">Important information about sales tax you may owe in your state</a>.</small>
+                                <button className="block w-full uppercase text-white bg-blue-custom font-bold text-sm px-6 py-3 rounded-md mt-4 disabled:text-gray-500 hover:brightness-125 disabled:bg-gray-400 disabled:border-gray-500">ship to this address</button>
+
                                 </div>
                             </div>
                         </div>
+
                         <div >
 
                             <div className="sticky top-0">

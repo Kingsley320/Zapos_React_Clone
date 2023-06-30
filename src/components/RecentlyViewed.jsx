@@ -13,8 +13,8 @@ function RecentlyViewed() {
         <>
             <div>
 
-                <h1 className="text-black text-2xl ml-5 mb-7" >Your Recently Viewed Items</h1>
-                <div className='grid grid-cols-6 gap-3 mx-5 mb-20'>
+                <h1 className="text-black text-2xl ml-10 mb-7" >Your Recently Viewed Items</h1>
+                <div className='grid grid-cols-6 gap-3 mx-10 mb-20'>
 
                     <div className="  text-md ">
                         <div className='bg-gray-100 h-68 p-3 flex items-center relative group'>
