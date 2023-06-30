@@ -5,6 +5,7 @@ import Points from '../components/Points';
 import Policies from '../components/Policies';
 import RecentlyViewed from '../components/RecentlyViewed';
 import CustomersViewed from '../components/CustomersViewed';
+import CartItems from '../components/CartItems';
 
 function Cart() {
     return(
@@ -12,7 +13,7 @@ function Cart() {
         <Navigation />
         <Points />
         <Policies />
-
+        <CartItems />
         <CustomersViewed />
         <RecentlyViewed />
         <Footer />
