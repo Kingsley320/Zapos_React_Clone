@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom';
 import SignIn from './SignIn';
 
 function SignUp() {
+
+
     return (
         <>
             <div className='my-4 text-center'>
-                <img src={img1} alt="logo" className='h-11 inline align-middle text-white' />
+                <Link to={'/'} ><img src={img1} alt="logo" className='h-11 inline align-middle text-white' /></Link>
                 <div className='border-1 border-gray-400 text-left w-85 mx-auto mt-4 rounded-md px-4 py-3 my-8 font-sans'>
                     <h1 className='text-3xl font-Arial'>Create account</h1>
-                    <form action="">
+                    <form action="POST">
                         <div className='my-2'>
                             <label htmlFor="" className='text-sm block font-semibold mb-0.5'>Your name</label>
                             <input type="text" placeholder='First and last name' className='w-full rounded xl outline-none border-2 border-gray-300 text-sm text-black py-1 px-3 focus:border-black'/></div>
