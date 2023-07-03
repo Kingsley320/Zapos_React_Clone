@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import Checkout from "../pages/Checkout"
-import img30 from '../assets/images/61Z8rLU86QL-_AC_SR255-340__FMwebp_.jpg'
+    import img30 from '../assets/images/61Z8rLU86QL-_AC_SR255-340__FMwebp_.jpg'
 import Button from "./Button"
 import { BsHeart } from "react-icons/bs"
 import { useState } from "react"
