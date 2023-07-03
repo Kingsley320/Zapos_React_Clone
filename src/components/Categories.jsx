@@ -1,6 +1,9 @@
 import { BsFillCaretDownFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { Fragment, useEffect, useRef, useState } from 'react';
 import SignUp from "../pages/SignUp";
+import { Menu, Transition } from "@headlessui/react";
+import Shop from "../pages/Shop";
 
 function Categories() {
     return (
@@ -10,7 +13,42 @@ function Categories() {
                     <ul className="flex  gap-3 text-md font-semibold ml-5 my-auto  ">
                         <li className="flex theblue"><button className=" mb-3 flex">New <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li>
                         <li className="flex theblue"><button className=" my-auto mb-3 flex">Women <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li>
-                        <li className="flex theblue"><button className=" my-auto mb-3 flex">Men <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li>
+                        <li>
+                            <Menu>
+                                <Menu.Button className="flex gap-1 text-blue-custom ">More  <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></Menu.Button>
+                                <Menu.Items className="absolute top-4 bg-white border-2 border-gray">
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                            <div className="grid grid-cols-6 w-[90vw] h-900px">
+                                                <div className="text-sky-800">
+                                                    <ul>
+                                                        <li><Link to={'/shop'} element={<Shop/>}>Shoes</Link></li>
+                                                        <li>Sneakers & Athletic</li>
+                                                        <li>Sandals</li>
+                                                        <li>Running Shoes</li>
+                                                        <li>Oxfords</li>
+                                                        <li>Loafers</li>
+                                                        <li>Clogs</li>
+                                                        <li>Boots</li>
+                                                        <li>Wide</li>
+                                                        <li>Men's Adaptive Shoes</li>
+                                                        <li>Work and Safety Sneakers</li>
+                                                        <li>Work and Duty Boots</li>
+                                                        <li>Shop All shoes</li>
+                                                    </ul>
+                                                </div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        )}
+                                    </Menu.Item>
+                                </Menu.Items>
+                            </Menu>
+                        </li>
+                        <Link to="/shop"><li className="flex theblue"><button className=" my-auto mb-3 flex">Men <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li></Link>
                         <li className="flex theblue"><button className=" my-auto mb-3 flex">Kids <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li>
                         <li className="flex theblue"><button className=" my-auto mb-3 flex">Departments <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li>
                         <li className="flex theblue"><button className=" my-auto mb-3 flex">Brands <BsFillCaretDownFill className="text-gray-300 text-sm my-auto p-0.5" /></button>  </li>
