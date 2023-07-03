@@ -4,10 +4,15 @@ import img2 from '../assets/images/paypal-logo.svg';
 import img30 from '../assets/images/61Z8rLU86QL-_AC_SR255-340__FMwebp_.jpg'
 import { BsChevronDoubleRight, BsFillCaretUpFill, BsBox2Heart, BsHeart, BsFillHeartFill } from "react-icons/bs";
 import { Disclosure } from '@headlessui/react'
-import Button from "./Button";
 
 function OrderInfo() {
+    const alertOrder = () => {
+        alert("Order Placed! Have a nice day.");
+        
+    }
+
     return (
+
         <>
             <div>
 
@@ -114,7 +119,7 @@ function OrderInfo() {
                                         <p >Size: <span>XL (Reg)</span></p>
                                         <p className="text-green-900 font-bold mb-2 text-sm mt-4">$74.99</p>
                                         <div className="font-bold text-blue-custom pt-2 flex gap-2">
-                                            <button className="flex px-2 border-2 border-sky-900 rounded-md hover:bg-sky-900 hover:text-white group">Move to <BsFillHeartFill className="my-auto ml-1 text-sm text-gray-300 group-hover:text-red-500"/></button>
+                                            <button className="flex px-2 border-2 border-sky-900 rounded-md hover:bg-sky-900 hover:text-white group">Move to <BsFillHeartFill className="my-auto ml-1 text-sm text-gray-300 group-hover:text-red-500" /></button>
                                             <button className="px-2 border-2 border-sky-900 rounded-md hover:bg-sky-900 hover:text-white">Remove</button>
                                         </div>
                                     </div>
@@ -124,15 +129,15 @@ function OrderInfo() {
                                             <p className="text-sm text-gray-700">Please add or select a shipping address to view delivery options.</p>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
 
                                 <div className="">
 
-                                <h1 className="font-semibold text-xl mb-5 mt-3">Order total: $74.99</h1>
+                                    <h1 className="font-semibold text-xl mb-5 mt-3">Order total: $74.99</h1>
 
                                     <small>By placing your order, you agree to zappos.com’s <a href="#">privacy notice</a> and <a href="#">conditions of use</a>. *<a href="#">Important information about sales tax you may owe in your state</a>.</small>
-                                <button className="block w-full uppercase text-white bg-blue-custom font-bold text-sm px-6 py-3 rounded-md mt-4 disabled:text-gray-500 hover:brightness-125 disabled:bg-gray-400 disabled:border-gray-500">ship to this address</button>
+                                    <button className="block w-full uppercase text-white bg-blue-custom font-bold text-sm px-6 py-3 rounded-md mt-4 disabled:text-gray-500 hover:brightness-125 disabled:bg-gray-400 disabled:border-gray-500">ship to this address</button>
 
                                 </div>
                             </div>
@@ -144,7 +149,7 @@ function OrderInfo() {
                                 <div className=" w-[410px]  bg-gray-100/75 rounded-md border-1 border-gray-200 mb-4">
                                     <div className="mx-4 my-6">
 
-                                        <button className='w-full flex my-auto  rounded py-2.5 mb-2 bg-green font-semibold text-sm border-1 border-gray-200 disabled:bg-gray-100/75 hover:brightness-110 '>
+                                        <button className='w-full flex my-auto  rounded py-2.5 mb-2 bg-green font-semibold text-sm border-1 border-gray-200 disabled:bg-gray-100/75 hover:brightness-110 ' onClick={alertOrder}>
                                             <p className='uppercase  text-blue-custom mx-auto'>Place your Order</p>
                                         </button>
 
@@ -161,7 +166,7 @@ function OrderInfo() {
                                         <div className="flex justify-between text-gray-700"><p>Total before tax:</p> <p>$74.99</p></div>
                                         <div className="flex justify-between text-gray-700"><p>Estimated tax to be collected:* </p> <p>$0.00</p></div>
 
-                                        <div className="flex justify-between text-xl font-semibold mt-4 border-t-1 pt-4"><p>Subtotal (1 item)</p> <p>$74.99</p></div>
+                                        <div className="flex justify-between text-xl font-semibold mt-4 border-t-1 pt-4"><p>Order Total</p> <p>$74.99</p></div>
 
 
                                     </div>

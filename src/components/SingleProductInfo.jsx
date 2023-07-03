@@ -7,7 +7,14 @@ import img5 from '../assets/images/single-product-img5.jpg'
 import img6 from '../assets/images/single-product-img6.jpg'
 import img7 from '../assets/images/ugg_header_092116.jpg'
 import img8 from '../assets/images/amazon-prime.2821774c351a0e9079f230ad4b312a71.svg'
-import { BsFillCaretUpFill, BsHeart, BsBoxArrowUp } from "react-icons/bs";
+import img9 from '../assets/images/Afterpay-Logo.png'
+
+import img10 from '../assets/images/black-color.jpg'
+import img11 from '../assets/images/81CP41Rx9jL.AC_SS144.jpg'
+import img12 from '../assets/images/61Bws+hoDCL.AC_SS144.jpg'
+import img13 from '../assets/images/71GSLsM4hvL.AC_SS144.jpg'
+import img14 from '../assets/images/coral-color.jpg'
+import { BsFillCaretUpFill, BsHeart, BsBoxArrowUp, BsBoxSeam, BsExclamationCircle } from "react-icons/bs";
 import { Disclosure } from '@headlessui/react'
 
 function SingleProductInfo() {
@@ -54,7 +61,7 @@ function SingleProductInfo() {
 
                             <div className="sticky top-0 mr-7 ">
                                 <div className=" w-[430px]   rounded-md  mb-4">
-                                    <div className="mx-4 my-6 relative">
+                                    <div className=" my-6 relative">
 
                                         <div className="flex  gap-3">
                                             <h2 className=" my-3 text-3xl font-bold">UGG </h2>
@@ -63,27 +70,109 @@ function SingleProductInfo() {
 
                                         <div className="flex justify-between text-xl font-semibold text-gray-900"><p>Couquette</p></div>
 
-                                        <div className="flex justify-between text-gray-600"><p>SKU 7138704</p></div>
+                                        <div className="flex justify-between text-gray-600 text-sm"><p>SKU 7138704</p></div>
 
-                                        <div className="flex justify-between text-gray-700"><h1>$119.95</h1></div>
-
-                                        <div className="flex justify-between text-gray-700">
-                                            <p>or 4 interest-free payments of $29.99 with </p>
+                                        <div className="flex justify-between text-green-900 relative ">
+                                            <h1 className="text-4xl   ">$119</h1>
+                                            <span className="absolute font-lg top-0 left-20"> 95</span>
                                         </div>
 
-                                        <div className="flex justify-between text-xl font-semibold mt-4 border-t-1 pt-4"><p>Subtotal (1 item)</p> <p>$74.99</p></div>
+                                        <div className="flex gap-1 text-gray-700 text-sm">
+                                            <p>or 4 interest-free payments of $29.99 with </p>
+                                            <img src={img9} alt="afterpay logo" className="w-20" />
+                                        </div>
+
+                                        <div className="flex  gap-4 my-auto  font-semibold mt-4  ">
+                                            <div className=" bg-sky-700 text-white py-1 px-2">
+                                                <p className="uppercase flex gap-2 text-sm"><BsBoxSeam className="w-3 my-auto " /> Ships Free</p>
+                                            </div>
+                                            <div className="text-sky-900 flex gap-1">
+                                                ⭐⭐⭐⭐⭐ <p className="text-sm font-semibold my-auto"> (6,507)</p>
+                                            </div>
+                                        </div>
+                                        <div className="mt-2">
+                                            <p>Color: <span>Chestnut</span></p>
+                                        </div>
+                                        <div className="flex gap-2 mt-3">
+                                            <div className=' bg-gray-100 flex items-center h-20 w-40'>
+                                                <img src={img10} alt="product info" className=" mix-blend-multiply" />
+                                            </div>
+                                            <div className=' bg-gray-100  flex items-center h-20 w-40'>
+                                                <img src={img11} alt="product info" className=" mix-blend-multiply" />
+                                            </div>
+                                            <div className=' bg-gray-100  flex items-center h-20 w-40'>
+                                                <img src={img12} alt="product info" className=" mix-blend-multiply" />
+                                            </div>
+                                            <div className=' bg-gray-100  flex items-center h-20 w-40'>
+                                                <img src={img13} alt="product info" className=" mix-blend-multiply" />
+                                            </div>
+                                            <div className=' bg-gray-100  flex items-center h-20 w-40'>
+                                                <img src={img14} alt="product info" className=" mix-blend-multiply" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small>This fits true to <b>size</b></small>
+                                        </div>
+                                        
+                                        <div>
+                                            <p className="font-bold mb-3">Women's sizes:</p>
+                                            <div className="grid grid-cols-7 gap-1 bg-white">
+                                                <div className=' bg-gray-100 flex items-center h-12 w-14 '>
+                                                   <p className=" mx-auto">5</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">6</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">7</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">8</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">9</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">10</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">11</p>
+                                                </div>
+                                                <div className=' bg-gray-100  flex items-center h-12 w-14'>
+                                                <p className=" mx-auto">12</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="my-3 flex gap-2 text-md text-sky-900 hover:underline hover:underline-offset-4">
+                                            <BsExclamationCircle className="w-3 my-auto" />
+                                            Calculate your size
+                                        </div>
+                                        <div className="font-bold">
+                                            <p className="mb-3">Width Options:</p>
+                                            <button className="bg-gray-50 border-2 border-sky-600 focus:outline-dashed px-8 py-2 focus:outline-sky-600 font-normal">
+                                                B - Medium
+                                            </button>
+                                        </div>
+
+                                        <div>
+                                            <span>{}</span>
+                                        </div>
 
 
                                     </div>
                                 </div>
-                                <button className='sticky bottom-0  w-full flex my-auto  rounded py-2.5 mb-2 bg-green font-semibold text-sm border-1  disabled:bg-gray-100/75 hover:brightness-110 '>
-                                    <p className='capitalize  text-blue-custom mx-auto'>Add to Cart</p>
-                                </button>
+
+                                <div className="sticky bottom-3 bg-white py-3">
+                                    <button className='   w-full flex my-auto  rounded py-3 mb-2 bg-green font-semibold text-sm border-1  disabled:bg-gray-100/75 hover:brightness-110 '>
+                                        <p className='capitalize  text-blue-custom mx-auto '>Add to Cart</p>
+                                    </button>
+                                </div>
+
                                 <div className="my-7 text-center">
                                     <div>
                                         <small className=""><b>Free</b> upgraded shipping & returns with</small>
                                     </div>
-                                    <img src={img8} alt="amazon prime" className="w-28 block mx-auto" />
+                                    <img src={img8} alt="amazon prime" className="w-20 mt-1 block mx-auto" />
                                 </div>
                                 <div className="w-[410px]  bg-gray-100/75 rounded-md border-1 border-gray-200 mb-4">
                                     <div className="mx-auto w-full max-w-md rounded-2xl bg-gray-100/75 p-2 ">
