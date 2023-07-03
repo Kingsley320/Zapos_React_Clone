@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import ShopItems from '../components/ShopItems';
 import RecentlyViewed from '../components/RecentlyViewed';
+import CustomersViewed from '../components/CustomersViewed';
 
 function Shop() {
     return (
@@ -10,6 +11,7 @@ function Shop() {
             <Navigation />
             <ShopItems />
             <RecentlyViewed />
+            <CustomersViewed />
             <Footer />
         </>
     )
