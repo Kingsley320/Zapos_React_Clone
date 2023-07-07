@@ -1,4 +1,5 @@
 import CustomersViewed from "../components/CustomersViewed"
+import DummyShopItems from "../components/DummyShopItems"
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import RecentlyViewed from "../components/RecentlyViewed"
