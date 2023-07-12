@@ -4,6 +4,7 @@ import img3 from '../assets/71phLcbyppL-_AC_SX380_.jpg';
 import img4 from '../assets/61eAKrmeINL-_AC_SX380_.jpg';
 import img5 from '../assets/71Rc6Sgv4cL-_AC_SX380_.jpg';
 import img6 from '../assets/81XUlTnfheL-_AC_SX380_.jpg';
+import DummyShopItems from './DummyShopItems';
 
 function CustomersViewed() {
     return (
@@ -60,6 +61,7 @@ function CustomersViewed() {
                         <a href="#" className='mx-auto hover:text-blue-700 hover:underline'>Vacation</a>
                         <a href="#" className='mx-auto hover:text-blue-700 hover:underline'>Vacation-Ready Styles</a>
                     </div>
+                    <DummyShopItems />
 
                 </div>
             </div>
