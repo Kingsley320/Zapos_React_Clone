@@ -6,6 +6,8 @@ import { Menu, Transition } from "@headlessui/react";
 import Shop from "../pages/Shop";
 
 function Categories() {
+    let userInfo = JSON.parse(localStorage.getItem("currentUser"));
+
     return (
         <>
             <div className='flex px-2 mx-auto  bg-gray-100/75 overflow-hidden h-12 relative'>
@@ -57,7 +59,16 @@ function Categories() {
                     </ul>
                 </div>
                 <div className='flex theblue my-auto ml-auto mr-14  font-bold justify-end'>
-                    <Link to={'/sign-up'} element={<SignUp />} className="my-auto mb-3 mt-3 ">Sign In / Register</Link>
+                    {
+                        userInfo ? (
+                           <p>Welcome Back, {userInfo.name}  </p> 
+                        ) : (
+                            <Link to={'/sign-up'} element={<SignUp />} className="my-auto mb-3 mt-3 ">
+                                <p> Sign In / Register</p>
+                            </Link>
+                        )
+                    }
+
 
                 </div>
             </div>
