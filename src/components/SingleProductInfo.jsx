@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import img1 from '../assets/images/61Z8rLU86QL-_AC_SR768-1024__FMwebp_.jpg'
 import img2 from '../assets/images/single-product-img2.jpg'
 import img3 from '../assets/images/single-product-img3.jpg'
 import img4 from '../assets/images/single-product-img4.jpg'
@@ -8,7 +7,6 @@ import img6 from '../assets/images/single-product-img6.jpg'
 import img7 from '../assets/images/ugg_header_092116.jpg'
 import img8 from '../assets/images/amazon-prime.2821774c351a0e9079f230ad4b312a71.svg'
 import img9 from '../assets/images/Afterpay-Logo.png'
-
 import img10 from '../assets/images/black-color.jpg'
 import img11 from '../assets/images/81CP41Rx9jL.AC_SS144.jpg'
 import img12 from '../assets/images/61Bws+hoDCL.AC_SS144.jpg'
@@ -17,7 +15,54 @@ import img14 from '../assets/images/coral-color.jpg'
 import { BsFillCaretUpFill, BsHeart, BsBoxArrowUp, BsBoxSeam, BsExclamationCircle } from "react-icons/bs";
 import { Disclosure } from '@headlessui/react'
 
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { ProductContext } from "../contexts/ProductContext";
+import axios from "axios";
+
 function SingleProductInfo() {
+
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+    const contextData = useContext(ProductContext);
+    const { cart, setCart } = contextData;
+
+    const getProduct = async () => {
+        try {
+            let response = await axios.get(`http://159.65.21.42:9000/product/${id}`);
+            const data = response.data;
+            console.log(data);
+            setProduct(data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        getProduct();
+        // eslint-disable-next-line
+    }, [id]);
+
+    const ratingstar = (num) => "⭐".repeat(num);
+    // console.log(ratingstar(product.rate));
+
+    const handleCart = (product) => {
+        const currentCart = [...cart];
+        console.log(currentCart);
+        const ItemExist = currentCart.find((item) => item._id === product._id);
+        console.log(ItemExist);
+        if (ItemExist) {
+            alert("You already have this in your cart");
+            return;
+        }
+        const newItem = { ...product, quantity: 1};
+        currentCart.push(newItem);
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+        setCart(currentCart);
+    };
+
+
     return (
         <>
             <div>
@@ -29,7 +74,7 @@ function SingleProductInfo() {
                                 <div className=' bg-gray-100  p-5 flex items-center h-[95vh] relative'>
                                     <span className="bg-white absolute right-0 top-0 px-2 py-0.5 rounded-bl-lg flex gap-2 group"><BsHeart className="text-black my-auto group-hover:animate-bounce" /> 98</span>
                                     <span className="bg-orange-700 text-white absolute left-0 top-0 px-2 py-0.5 rounded-br-lg">Best Seller</span>
-                                    <img src={img1} alt="product info" className=" mix-blend-multiply" />
+                                    <img src={product.image} alt="product info" className=" mix-blend-multiply" />
                                 </div>
                                 <div className="flex gap-2 mt-2">
 
@@ -64,17 +109,17 @@ function SingleProductInfo() {
                                     <div className=" my-6 relative">
 
                                         <div className="flex  gap-3">
-                                            <h2 className=" my-3 text-3xl font-bold">UGG </h2>
+                                            <h2 className=" my-3 text-3xl font-bold">{product.name} </h2>
                                             <BsBoxArrowUp className="text-md my-auto font-bold" />
                                         </div>
 
-                                        <div className="flex justify-between text-xl font-semibold text-gray-900"><p>Couquette</p></div>
+                                        <div className="flex justify-between text-xl font-semibold text-gray-900"><p>{product.description}</p></div>
 
                                         <div className="flex justify-between text-gray-600 text-sm"><p>SKU 7138704</p></div>
 
                                         <div className="flex justify-between text-green-900 relative ">
-                                            <h1 className="text-4xl   ">$119</h1>
-                                            <span className="absolute font-lg top-0 left-20"> 95</span>
+                                            <h1 className="text-4xl   ">${product.price}</h1>
+                                            {/* <span className="absolute font-lg top-0 left-20"> 99</span> */}
                                         </div>
 
                                         <div className="flex gap-1 text-gray-700 text-sm">
@@ -113,33 +158,33 @@ function SingleProductInfo() {
                                         <div>
                                             <small>This fits true to <b>size</b></small>
                                         </div>
-                                        
+
                                         <div>
                                             <p className="font-bold mb-3">Women's sizes:</p>
                                             <div className="grid grid-cols-7 gap-1 bg-white">
                                                 <div className=' bg-gray-100 flex items-center h-12 w-14 '>
-                                                   <p className=" mx-auto">5</p>
+                                                    <p className=" mx-auto">5</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">6</p>
+                                                    <p className=" mx-auto">6</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">7</p>
+                                                    <p className=" mx-auto">7</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">8</p>
+                                                    <p className=" mx-auto">8</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">9</p>
+                                                    <p className=" mx-auto">9</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">10</p>
+                                                    <p className=" mx-auto">10</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">11</p>
+                                                    <p className=" mx-auto">11</p>
                                                 </div>
                                                 <div className=' bg-gray-100  flex items-center h-12 w-14'>
-                                                <p className=" mx-auto">12</p>
+                                                    <p className=" mx-auto">12</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +200,7 @@ function SingleProductInfo() {
                                         </div>
 
                                         <div>
-                                            <span>{}</span>
+                                            <span>{ }</span>
                                         </div>
 
 
@@ -163,9 +208,11 @@ function SingleProductInfo() {
                                 </div>
 
                                 <div className="sticky bottom-3 bg-white py-3">
-                                    <button className='   w-full flex my-auto  rounded py-3 mb-2 bg-green font-semibold text-sm border-1  disabled:bg-gray-100/75 hover:brightness-110 '>
-                                        <p className='capitalize  text-blue-custom mx-auto '>Add to Cart</p>
-                                    </button>
+                                    {/* <Link to={'/checkout'}> */}
+                                        <button className='   w-full flex my-auto  rounded py-3 mb-2 bg-green font-semibold text-sm border-1  disabled:bg-gray-100/75 hover:brightness-110 ' onClick={() => handleCart(product)}>
+                                            <p className='capitalize  text-blue-custom mx-auto ' >Add to Cart</p>
+                                        </button>
+                                    {/* </Link> */}
                                 </div>
 
                                 <div className="my-7 text-center">
@@ -254,13 +301,10 @@ function SingleProductInfo() {
 
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </>
     )
