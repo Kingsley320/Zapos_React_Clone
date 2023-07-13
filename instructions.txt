@@ -11,3 +11,7 @@ Admin will have:
 
 -single product page should work but let other parts be hard coded
 - add to cart functionlity
+
+///////////////////////////////// CORRECTION ////////////////////
+- Calculate total price for a single product
+- 
